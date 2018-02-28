@@ -14,8 +14,14 @@ east = Room('east', 'You are in the east section.', 'e')
 west = Room('west', 'You are in the west section.', 'w')
 
 northwest1.add_connection(northwest2, "passage", ["northwest", "nw"])
-northwest1.add_connection(kitchen, "passage", ["west", "w"])
-hallway.add_connection(dining, "passage", ["south", "s"])
+northwest1.add_connection(northeast1, "passage", ["east", "e"])
+northwest1.add_connection(southwest1, "passage", ["south", "s"])
+northwest1.add_connection(west, "passage", ["southwest", "sw"])
+northwest1.add_connection(north, "passage", ["northeast", "ne"])
+northwest2.add_connection(west, "passage", ["south", "s"])
+northwest2.add_connection(north, "passage", ["east", "e"])
+northwest2.add_connection(northwest1, "passage", ["southeast", "se"])
+
 kitchen.add_connection(hallway, "passage", ["north", "n"])
 
 
